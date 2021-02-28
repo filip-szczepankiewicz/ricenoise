@@ -6,11 +6,11 @@ if nargin < 1
     fn = 'ricenoise_lut.mat';
 end
 
-snr = logspace(-3, 3, 500);
+sigma = logspace(-3, 3, 500);
 
-for i = 1:numel(snr)
-    pd = makedist('Rician','s',1,'sigma',1/snr(i));
+for i = 1:numel(sigma)
+    pd = makedist('Rician','s',1,'sigma',sigma(i));
     f(i) = mean(pd);
 end
 
-save(fn, 'f', 'snr')
+save(fn, 'f', 'sigma')

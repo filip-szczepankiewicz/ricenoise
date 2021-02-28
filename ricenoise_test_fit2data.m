@@ -2,30 +2,31 @@
 
 clear
 
-b  = linspace(0,2,300);
+b  = linspace(0,4,300);
 D  = 1;
-s0 = 1;
+s0 = 3;
+snr = 5;
 
 s = s0 * exp(-b*D);
 
-snr = 5;
+sigma = s0/snr;
 
 
 tic
-s_sim = mean(ricenoise_data2noisy(s' * ones(100,1)', snr),2);
+s_sim = mean(ricenoise_data2noisy(s' * ones(100,1)', sigma),2);
 toc
 
 tic
-s_mkd = ricenoise_fit2data_mkd([s0 D snr], b);
+s_mkd = ricenoise_fit2data_mkd([s0 D sigma], b);
 toc
 
 tic
-s_gud = ricenoise_fit2data_gud([s0 D snr], b);
+s_gud = ricenoise_fit2data_gud([s0 D sigma], b);
 toc
 
 lut = load('ricenoise_lut.mat');
 tic
-s_lut = ricenoise_fit2data_lut([s0 D snr], b, lut);
+s_lut = ricenoise_fit2data_lut([s0 D sigma], b, lut);
 toc
 
 

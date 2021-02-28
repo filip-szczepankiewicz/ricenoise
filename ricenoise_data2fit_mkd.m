@@ -6,5 +6,5 @@ function m = ricenoise_data2fit_mkd(s, b)
 
 nrm = max(s);
 
-m = lsqcurvefit(@ricenoise_fit2data_mkd, x0, b, s/nrm, lb, ub) .* [nrm 1 1];
+m = lsqcurvefit(@ricenoise_fit2data_mkd, x0, b, s/nrm, lb, ub) .* [nrm 1 nrm];
 

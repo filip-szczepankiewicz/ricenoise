@@ -6,5 +6,5 @@ function m = ricenoise_data2fit_lut(s, b, lut)
 
 nrm = max(s);
 
-m = lsqcurvefit(@(s, b)ricenoise_fit2data_lut(s, b, lut), x0, b, s/nrm, lb, ub) .* [nrm 1 1];
+m = lsqcurvefit(@(s, b)ricenoise_fit2data_lut(s, b, lut), x0, b, s/nrm, lb, ub) .* [nrm 1 nrm];
 
