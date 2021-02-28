@@ -11,23 +11,14 @@ s = s0 * exp(-b*D);
 
 sigma = s0/snr;
 
-
-tic
-s_sim = mean(ricenoise_data2noisy(s' * ones(100,1)', sigma),2);
-toc
-
-tic
-s_mkd = ricenoise_fit2data_mkd([s0 D sigma], b);
-toc
-
-tic
-s_gud = ricenoise_fit2data_gud([s0 D sigma], b);
-toc
-
 lut = load('ricenoise_lut.mat');
-tic
-s_lut = ricenoise_fit2data_lut([s0 D sigma], b, lut);
-toc
+
+
+s_sim = mean(ricenoise_data2noisy(s' * ones(100,1)', sigma),2);
+
+s_mkd = ricenoise_data2bias_mkd(s, sigma);
+s_gud = ricenoise_data2bias_gud(s, sigma);
+s_lut = ricenoise_data2bias_lut(s, sigma, lut);
 
 
 clf

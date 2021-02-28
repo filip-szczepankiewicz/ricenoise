@@ -6,7 +6,7 @@ b  = linspace(0,4,20);
 D  = 1;
 s0 = 2;
 
-snr = 30;
+snr = 6;
 
 sigma = s0/snr;
 

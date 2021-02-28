@@ -1,7 +1,7 @@
-function S = ricenoise_fit2data_gud(m, b)
-% function S = ricenoise_fit2data_gud(m, b)
+function s = ricenoise_fit2data_gud(m, b)
+% function s = ricenoise_fit2data_gud(m, b)
 % Filip Szczepankiewicz, LU, Sweden
 
-N = m(1) * exp(-b*m(2));
+s = m(1) * exp(-b*m(2));
 
-S = sqrt( N.^2 + (m(3) * sqrt(pi/2)).^2 );
+s = ricenoise_data2bias_gud(s, m(3));
