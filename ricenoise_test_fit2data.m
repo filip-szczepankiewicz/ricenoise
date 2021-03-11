@@ -45,4 +45,6 @@ ylabel('Signal error')
 xlabel('b-value [ms/µm^2]')
 title(['Error Gud vs. LUT was ' num2str(mean(e_gud),'%0.1e') ' vs. ' num2str(mean(e_lut),'%0.1e')])
 
+% axis tight
+
 set(gcf, 'color', 'w')
