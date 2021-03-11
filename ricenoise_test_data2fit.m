@@ -6,7 +6,7 @@ b  = linspace(0,4,20);
 D  = 1;
 s0 = 2;
 
-snr = 6;
+snr = 60;
 
 sigma = s0/snr;
 
@@ -48,7 +48,7 @@ xlabel('b-value [ms/µm^2]')
 
 legend('Measured', 'Makedist', 'Gudbjartsson', 'Look up table')
 
-disp('Methods          MKD       Gud       LUT')
+disp('Methods          MKD       LUT       GUD')
 disp(['Fit times [ms] = ' num2str([t_mkd t_lut t_gud]*1000, '%10.1f')])
 disp(['Estimated SNR  = ' num2str([[m_mkd(1) m_lut(1) m_gud(1)]./[m_mkd(3) m_lut(3) m_gud(3)]], '%10.1f')])
 
