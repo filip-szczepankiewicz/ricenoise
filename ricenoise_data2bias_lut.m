@@ -12,12 +12,12 @@ ihi = n<min(lut.sigma); % high snr
 
 % Reileight limit at low snr
 if any(ilo)
-    S(ilo) = m(3) * sqrt(pi/2);
+    s(ilo) = sigma * sqrt(pi/2);
 end
 
 % No error at high snr
 if any(ihi)
-    S(ihi) = t(ihi);
+    s(ihi) = s(ihi);
 end
 
 
