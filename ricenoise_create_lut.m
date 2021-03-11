@@ -6,7 +6,7 @@ if nargin < 1
     fn = 'ricenoise_lut.mat';
 end
 
-sigma = logspace(-3, 3, 500);
+sigma = logspace(-3, 3, 200);
 
 for i = 1:numel(sigma)
     pd = makedist('Rician','s',1,'sigma',sigma(i));
