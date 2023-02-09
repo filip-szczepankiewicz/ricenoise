@@ -8,8 +8,10 @@ end
 
 sigma = logspace(-3, 3, 200);
 
+f = zeros(size(sigma));
+
 for i = 1:numel(sigma)
-    pd = makedist('Rician','s',1,'sigma',sigma(i));
+    pd   = makedist('Rician','s',1,'sigma',sigma(i));
     f(i) = mean(pd);
 end
 
