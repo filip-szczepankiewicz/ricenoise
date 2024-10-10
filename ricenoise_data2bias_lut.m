@@ -1,6 +1,10 @@
 function s_out = ricenoise_data2bias_lut(s, sigma, lut)
 % function s = ricenoise_data2bias_lut(s, sigma, lut)
 
+if nargin < 3
+    lut = ricenoise_lut_default;
+end
+
 n = sigma./s;
 
 f = interp1(lut.sigma,lut.f,n, 'spline');

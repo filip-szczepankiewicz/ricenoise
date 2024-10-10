@@ -2,11 +2,12 @@
 
 clear
 
-b  = linspace(0,4,20);
-D  = 1;
-s0 = 2;
+b  = [50 500 1500 2000 3000]/1000;
+D  = 2.2;
+s0 = 1;
 
-snr = 20;
+% snr = 140;
+snr = 50;
 
 sigma = s0/snr;
 
@@ -52,4 +53,4 @@ disp('Methods          MKD       LUT       GUD')
 disp(['Fit times [ms] = ' num2str([t_mkd t_lut t_gud]*1000, '%10.1f')])
 disp(['Estimated SNR  = ' num2str([[m_mkd(1) m_lut(1) m_gud(1)]./[m_mkd(3) m_lut(3) m_gud(3)]], '%10.1f')])
 
-
+ylim([0.001 1.01])

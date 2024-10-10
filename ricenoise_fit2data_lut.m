@@ -5,6 +5,11 @@ function s = ricenoise_fit2data_lut(m, b, lut)
 % lut has two fields that contain error factor (f) and the associated
 % standard deviation (sigma).
 
+if nargin < 3 || isempty(lut)
+    lut = ricenoise_lut_default;
+end
+
+
 s = m(1) * exp(-b*m(2));
 
 s = ricenoise_data2bias_lut(s, m(3), lut);

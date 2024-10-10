@@ -4,4 +4,4 @@ function [x0, lb, ub] = ricenoise_lsqbounds()
 
 x0 = [1   1    0.1 ];
 lb = [.2  .01  0   ];
-ub = [2   3.1  100 ];
+ub = [2   3.1  300 ];
